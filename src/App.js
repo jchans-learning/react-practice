@@ -1,9 +1,11 @@
-import HelloProps from './components/HelloProps'
+import HelloProps3 from './components/HelloProps3'
+import HelloPropsClass2 from './components/HelloPropsClass2'
 
 function App() {
   return (
     <>
-      <HelloProps text="你好" name="Hans" />
+      <HelloProps3 name={undefined} text={'Whaaat'} />
+      <HelloPropsClass2 />
     </>
   )
 }
