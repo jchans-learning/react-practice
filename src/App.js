@@ -1,11 +1,21 @@
-import HelloProps3 from './components/HelloProps3'
-import HelloPropsClass2 from './components/HelloPropsClass2'
+import HelloProps4 from './components/HelloProps4'
+import HelloPropsClass3 from './components/HelloPropsClass3'
 
 function App() {
   return (
     <>
-      <HelloProps3 name={undefined} text={'Whaaat'} />
-      <HelloPropsClass2 />
+      <HelloProps4
+        name={'manui'}
+        text={'sup!'}
+        clickMethod={() => {
+          alert('Wooooooow!')
+        }}
+      />
+      <HelloPropsClass3
+        clickMethod={() => {
+          alert('Wooooooow! Classsss!')
+        }}
+      />
     </>
   )
 }
