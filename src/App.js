@@ -1,9 +1,9 @@
-import Parent2 from './components/Parent2'
+import Parent3 from './components/Parent3'
 
 function App() {
   return (
     <>
-      <Parent2 />
+      <Parent3 />
     </>
   )
 }

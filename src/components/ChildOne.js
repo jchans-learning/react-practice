@@ -1,4 +1,5 @@
 // Parent3,js
+const innerData = 'ChildOne inner Data'
 
 function ChildOne(props) {
   return (
