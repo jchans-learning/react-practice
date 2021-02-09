@@ -1,9 +1,9 @@
-import CountParent from './components/CountParent'
+import CountClass2 from './components/CountClass2'
 
 function App() {
   return (
     <>
-      <CountParent />
+      <CountClass2 />
     </>
   )
 }
