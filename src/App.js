@@ -1,9 +1,9 @@
-import MultipleInputs from './components/MultipleInputs'
+import FormFields from './components/FormFields'
 
 function App() {
   return (
     <>
-      <MultipleInputs />
+      <FormFields />
     </>
   )
 }
