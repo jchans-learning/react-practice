@@ -1,9 +1,20 @@
-import CountClass2 from './components/CountClass2'
+import { useState } from 'react'
+import CountClass4 from './components/CountClass4'
 
 function App() {
+  const [show, setShow] = useState(true)
+
   return (
     <>
-      <CountClass2 />
+      {show && <CountClass4 />}
+      <hr />
+      <button
+        onClick={() => {
+          setShow(!show)
+        }}
+      >
+        {show ? '消失吧' : '復活吧'}
+      </button>
     </>
   )
 }
