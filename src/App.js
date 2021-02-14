@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import CountClass4 from './components/CountClass4'
+import CountFunc2 from './components/CountFunc2'
 
 function App() {
   const [show, setShow] = useState(true)
 
   return (
     <>
-      {show && <CountClass4 />}
+      {show && <CountFunc2 />}
       <hr />
       <button
         onClick={() => {
