@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import MoneyEx from './components/MoneyEx'
+import MultipleInputs from './components/MultipleInputs'
 
 function App() {
   return (
     <>
-      <MoneyEx />
+      <MultipleInputs />
     </>
   )
 }
