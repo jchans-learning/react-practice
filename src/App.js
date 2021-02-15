@@ -1,9 +1,9 @@
-import FormFields from './components/FormFields'
+import TodoApp from './components/TodoApp'
 
 function App() {
   return (
     <>
-      <FormFields />
+      <TodoApp />
     </>
   )
 }
