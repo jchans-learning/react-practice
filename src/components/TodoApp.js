@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import TodoAddForm from './TodoAddForm'
+import TodoList from './TodoList'
+
 function TodoApp() {
   const [todo, setTodo] = useState('')
 
@@ -23,7 +26,7 @@ function TodoApp() {
   }
 
   const handleAddNew = (e) => {
-    if (e.key === 'Enter' && e.target.value.trin()) {
+    if (e.key === 'Enter' && e.target.value.trim()) {
       const newTodoItem = {
         id: +new Date(),
         text: e.target.value,
@@ -47,39 +50,12 @@ function TodoApp() {
   return (
     <>
       <h1>待辦事項</h1>
-      <input
-        type="text"
-        value={todo}
-        onChange={(e) => {
-          setTodo(e.target.value)
-        }}
-        onKeyPress={(e) => {
-          handleAddNew(e)
-        }}
+      <TodoAddForm todo={todo} setTodo={setTodo} handleAddNew={handleAddNew} />
+      <TodoList
+        todos={todos}
+        handleCompleted={handleCompleted}
+        handleDelete={handleDelete}
       />
-      <ul>
-        {todos.map((item, index) => {
-          return (
-            <li key={item.id}>
-              <input
-                type="checkbox"
-                checked={item.completed}
-                onChange={() => {
-                  handleCompleted(item.id)
-                }}
-              />
-              {item.completed ? <del>{item.text}</del> : item.text}
-              <button
-                onClick={() => {
-                  handleDelete(item.id)
-                }}
-              >
-                刪除
-              </button>
-            </li>
-          )
-        })}
-      </ul>
     </>
   )
 }
