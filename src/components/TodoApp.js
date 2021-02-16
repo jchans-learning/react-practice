@@ -22,6 +22,28 @@ function TodoApp() {
     }
   }
 
+  const handleAddNew = (e) => {
+    if (e.key === 'Enter' && e.target.value.trin()) {
+      const newTodoItem = {
+        id: +new Date(),
+        text: e.target.value,
+        completed: false,
+      }
+
+      const newTodos = [newTodoItem, ...todos]
+
+      setTodos(newTodos)
+
+      setTodo('')
+    }
+  }
+
+  const handleDelete = (id) => {
+    const newTodos = todos.filter((item) => item.id !== id)
+
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <h1>待辦事項</h1>
@@ -32,19 +54,7 @@ function TodoApp() {
           setTodo(e.target.value)
         }}
         onKeyPress={(e) => {
-          if (e.key === 'Enter' && e.target.value.trim()) {
-            const newTodoItem = {
-              id: +new Date(),
-              text: e.target.value,
-              completed: false,
-            }
-
-            const newTodos = [newTodoItem, ...todos]
-
-            setTodos(newTodos)
-
-            setTodo('')
-          }
+          handleAddNew(e)
         }}
       />
       <ul>
@@ -59,6 +69,13 @@ function TodoApp() {
                 }}
               />
               {item.completed ? <del>{item.text}</del> : item.text}
+              <button
+                onClick={() => {
+                  handleDelete(item.id)
+                }}
+              >
+                刪除
+              </button>
             </li>
           )
         })}
